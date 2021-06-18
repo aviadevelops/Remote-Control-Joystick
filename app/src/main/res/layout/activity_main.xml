@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="views.MainActivity">
+
+    <EditText
+        android:id="@+id/port_et"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_x="62dp"
+        android:layout_y="146dp"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:orientation="vertical"
+        android:text="Port"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <EditText
+        android:id="@+id/ip_et"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_x="66dp"
+        android:layout_y="70dp"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:orientation="vertical"
+        android:text="IP"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_x="101dp"
+        android:layout_y="229dp"
+        android:text="Connect"
+
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="308dp" />
+
+
+    <com.example.remotecontroljoystick.views.Joystick
+        android:id="@+id/custom_joystick"
+        android:layout_width="244dp"
+        android:layout_height="191dp"
+        android:layout_gravity="center"
+        android:layout_x="83dp"
+        android:layout_y="431dp"
+        android:orientation="vertical" />
+
+    <SeekBar
+        android:id="@+id/seekbar_rudder"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_x="89dp"
+        android:layout_y="640dp" />
+
+    <SeekBar
+        android:id="@+id/seekbar_throttle"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_x="-59dp"
+        android:layout_y="529dp"
+        android:rotation="270" />
+
+
+</android.widget.AbsoluteLayout>
