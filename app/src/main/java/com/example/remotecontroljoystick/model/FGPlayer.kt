@@ -21,9 +21,6 @@ class FGPlayer constructor(ip: String, port: String) {
             fg = Socket(ip, port.toInt())
             out = PrintWriter(fg!!.getOutputStream(), true)
             println("Connected Successfully")
-//            for (i in 1..2000) {
-//                out?.print("set /controls/engines/current-engine/throttle " + 1 + "\r\n")
-//            }
 
         }
     }

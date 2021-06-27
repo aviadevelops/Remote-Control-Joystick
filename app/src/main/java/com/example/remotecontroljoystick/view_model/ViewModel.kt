@@ -12,13 +12,14 @@ class ViewModel constructor(
 
 ) {
     var player: FGPlayer = FGPlayer()
-    fun connect(ip: String, port: String){
+    fun connect(ip: String, port: String) {
         player = FGPlayer(ip, port)
         player.connect()
     }
 
 
     fun updateAileronAndElevator(a: Float, e: Float): Float {
+        // 120 - radius
         player.setAileronAndElevator(a, e)
         return 0.0F
     }

@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.SeekBar
 import androidx.annotation.RequiresApi
 import com.example.remotecontroljoystick.R
-import com.example.remotecontroljoystick.model.FGPlayer
 import com.example.remotecontroljoystick.view_model.ViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             ViewModel()
 
         btn_connect.setOnClickListener {
-           vm.connect(ip.text.toString(), port.text.toString())
+            vm.connect(ip.text.toString(), port.text.toString())
         }
 
         seekbar_rudder.setOnSeekBarChangeListener(object :
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 seek: SeekBar,
                 progress: Int, fromUser: Boolean
             ) {
-                vm.updateRudder(progress.toFloat()/100)
+                vm.updateRudder(progress.toFloat() / 100)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 seek: SeekBar,
                 progress: Int, fromUser: Boolean
             ) {
-                vm.updateThrottle(progress.toFloat()/100)
+                vm.updateThrottle(progress.toFloat() / 100)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}

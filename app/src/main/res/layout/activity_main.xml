@@ -52,26 +52,57 @@
     <com.example.remotecontroljoystick.views.Joystick
         android:id="@+id/custom_joystick"
         android:layout_width="244dp"
-        android:layout_height="191dp"
+        android:layout_height="227dp"
         android:layout_gravity="center"
         android:layout_x="83dp"
-        android:layout_y="431dp"
+        android:layout_y="395dp"
         android:orientation="vertical" />
 
     <SeekBar
         android:id="@+id/seekbar_rudder"
-        android:layout_width="241dp"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_x="89dp"
-        android:layout_y="640dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="88dp"
+        android:layout_x="67dp"
+        android:layout_y="638dp"
+        android:progressDrawable="@drawable/progress"
+        android:thumb="@drawable/thumb" />
 
     <SeekBar
         android:id="@+id/seekbar_throttle"
-        android:layout_width="241dp"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_x="-59dp"
-        android:layout_y="529dp"
-        android:rotation="270" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="88dp"
+        android:layout_x="-94dp"
+        android:layout_y="508dp"
+        android:progressDrawable="@drawable/progress"
+        android:rotation="270"
+        android:thumb="@drawable/thumb" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="5dp"
+        android:layout_y="501dp"
+        android:rotation="270"
+        android:text="@string/throttle"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="182dp"
+        android:layout_y="656dp"
+        android:text="@string/rudder"
+        android:textColor="@color/black" />
 
 
 </android.widget.AbsoluteLayout>

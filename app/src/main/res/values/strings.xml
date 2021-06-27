@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RemoteControlJoystick</string>
+    <string name="rudder">Rudder</string>
+    <string name="throttle">Throttle</string>
 </resources>

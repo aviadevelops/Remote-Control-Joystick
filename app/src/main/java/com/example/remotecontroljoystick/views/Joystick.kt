@@ -6,9 +6,12 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Typeface
+import android.os.Build
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import androidx.annotation.RequiresApi
+import androidx.core.graphics.alpha
 import kotlin.math.min
 
 
@@ -24,7 +27,7 @@ class Joystick @JvmOverloads constructor(
     var radius: Float = 0F
     var canvasWidth: Int = 0
     var canvasHeight: Int = 0
-    var onChange: (Float, Float) -> Float = { a: Float, e: Float -> 0.0.toFloat() }
+    lateinit var onChange: (Float, Float) -> Float
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
@@ -35,11 +38,11 @@ class Joystick @JvmOverloads constructor(
     }
 
     fun normalizeAileron(x: Float): Float {
-        return 2 * (x / canvasWidth) - 1
+        return (2 * (x / canvasWidth) - 1)
     }
 
     fun normalizeElevator(x: Float): Float {
-        return 2 * (x / canvasHeight) - 1
+        return ((2 * (x / canvasHeight) - 1) * -1)
     }
 
 
@@ -54,9 +57,12 @@ class Joystick @JvmOverloads constructor(
         canvasHeight = height
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        paint.color = Color.BLACK
+        paint.color = Color.rgb(103, 58, 183)
+        canvas.drawCircle(initialCenterX, initialCenterY, radius * 2, paint)
+        paint.color = Color.rgb(30, 4, 78)
         canvas.drawCircle(centerX, centerY, radius, paint)
     }
 
@@ -65,7 +71,7 @@ class Joystick @JvmOverloads constructor(
         var action = event.action
 
 
-        if (action == MotionEvent.ACTION_MOVE) {
+        if (action != MotionEvent.ACTION_UP) {
             if (!(centerX + radius > canvasWidth || centerX - radius < 0 || centerY - radius < 0 || centerY + radius > canvasHeight)) {
                 centerX = event.x
                 centerY = event.y
@@ -83,8 +89,7 @@ class Joystick @JvmOverloads constructor(
                 centerY = canvasHeight - radius
             }
 
-        }
-        if (action == MotionEvent.ACTION_UP) {
+        } else {
             centerX = initialCenterX
             centerY = initialCenterY
         }
