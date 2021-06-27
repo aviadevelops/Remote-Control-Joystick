@@ -54,6 +54,6 @@ The Remote Control Joystick Android application offers full remote control of a 
 
 ### Additional Links
 * [UML Diagram](UML.pdf)
-* [App Walkthrough](https://youtu.be/GbNHsQEV4QA)
+* [App Walkthrough Video](https://youtu.be/GbNHsQEV4QA)
 
 
